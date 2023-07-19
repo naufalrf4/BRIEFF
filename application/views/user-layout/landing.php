@@ -36,7 +36,7 @@
                     <div class="about-content-text mb-80">
                         <h6 class="wow fadeInUp" data-wow-delay="300ms">Tentang Brieff 6.0</h6>
                         <h3 class="wow fadeInUp" data-wow-delay="300ms">BRIEFF 6.0</h3>
-                        <p class="wow fadeInUp" data-wow-delay="300ms">BRIEFF (Bogor Independent Film Festival 5.0) merupakan program kerja yang diselenggarakan oleh komunitas Agrimovie Sekolah Vokasi IPB University pada tahun 2022.</p>
+                        <p class="wow fadeInUp" data-wow-delay="300ms">BRIEFF (Bogor Independent Film Festival 6.0) merupakan program kerja yang diselenggarakan oleh komunitas Agrimovie Sekolah Vokasi IPB University pada tahun 2023.</p>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     <div class="about-content-text mb-80">
                         <h6 class="wow fadeInUp" data-wow-delay="300ms">JUDUL ACARA</h6>
                         <h3 class="wow fadeInUp" data-wow-delay="300ms">ARUNIKA</h3>
-                        <p class="wow fadeInUp" data-wow-delay="300ms">Festival film kali ini mengusung tema "Developmet and Change Towards New Media", dengan judul acara yaitu "Incipience".</p>
+                        <p class="wow fadeInUp" data-wow-delay="300ms">BRIEFF tahun ke enam ini mengusung tema “The Radiance of Indonesian Cinema”, dengan judul acara yaitu Arunika.</p>
                         <a href="<?=site_url('tentang-kami')?>" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">Selengkapnya <i class="zmdi zmdi-long-arrow-right"></i></a>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                 <div class="col-12">
                     <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
                         <p>Akan Dimeriahkan Oleh</p>
-                        <h4>Guest Star Brieff 6.0</h4>
+                        <h4>Guest Star BRIEFF 6.0</h4>
                     </div>
                 </div>
             </div>
