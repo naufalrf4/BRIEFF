@@ -48,7 +48,6 @@
                                                 <small class="text-danger"><?=form_error('passconf')?></small>
                                             </div>
                                         </div>
-                                        <input type="hidden" name="role" value="umum">
                                         <div class="col-12 text-center copywrite-text">
                                             <button type="submit" class="btn confer-btn">Daftar</button>
                                         </div>

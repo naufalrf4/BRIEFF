@@ -135,9 +135,9 @@ class AuthController extends CI_Controller
 	{
 		$config = [
 			'protocol' => 'smtp',
-			'smtp_host' => 'ssl://smtp.googlemail.com',
-			'smtp_user' => 'contactbrieff23@gmail.com',
-			'smtp_pass' => 'ngfjixdbubrdlhwi',
+			'smtp_host' => 'ssl://mail.brieff.id',
+			'smtp_user' => 'contact@brieff.id',
+			'smtp_pass' => 'dp36F2n2Pq',
 			'smtp_port' => 465,
 			'mailtype' => 'html',
 			'charset' => 'UTF-8',
@@ -147,7 +147,7 @@ class AuthController extends CI_Controller
 
 		$this->load->library('email', $config);
 
-		$this->email->from('contactbrieff23@gmail.com', 'BRIEFF 6.0');
+		$this->email->from('contact@brieff.id', 'BRIEFF 6.0');
 		$this->email->to($this->input->post('email'));
 		$this->email->set_mailtype('html');
 
