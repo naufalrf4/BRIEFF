@@ -26,7 +26,7 @@ class User_M extends CI_Model {
 		$params['email'] = $post['email'];
 		$params['password'] = md5($post['password']);
 		$params['role'] = 'umum';
-		$params['is_active'] = 1;
+		$params['is_active'] = 0;
 
 		$this->db->insert('user', $params);
 	}

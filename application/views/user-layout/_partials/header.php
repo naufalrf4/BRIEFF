@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?=$title?> - Brieff 6.0</title>
+    <title><?=$title?> - BRIEFF 6.0</title>
     <meta name="description" content="BRIEFF (Bogor Independent Film Festival 6.0) merupakan program kerja yang diselenggarakan oleh komunitas Agrimovie Sekolah Vokasi IPB University pada tahun 2023."/>
     <meta name="author" content="BRIEFF"/>
     <meta name="keywords" content="BRIEFF, Brieff, Brieff 6, BRIEFF 6, Agrimovie, Film Festival, Bogor Independent Film Festival, Sekolah Vokasi IPB, SV IPB, Bogor, Kota Bogor">

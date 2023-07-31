@@ -69,7 +69,7 @@ class PendaftaranController extends CI_Controller
 	public function add()
 	{
 		$verif = $this->db->from("pendaftaran")->where('id_user', $this->session->userdata('id'))->get()->num_rows();
-		$tgl_tutup = "2022-09-24";
+		$tgl_tutup = "2023-08-22";
         $tgl_skrg = date("Y-m-d");
 
 		if($verif < '2') {
@@ -81,7 +81,7 @@ class PendaftaranController extends CI_Controller
     				$id = $this->session->userdata('id');
     				$data['id'] = $id;
     
-    				$this->form_validation->set_rules('email', 'Email', 'required|trim');
+					$this->form_validation->set_rules('email', 'Email', 'required|trim');
     				$this->form_validation->set_rules('no_hp', 'No. HP', 'required|trim');
     
     				$this->form_validation->set_rules('instagram', 'Instagram', 'required|trim');
@@ -99,13 +99,12 @@ class PendaftaranController extends CI_Controller
     
     				$this->form_validation->set_rules('link_trailer', 'Link Trailer', 'required|trim');
     				$this->form_validation->set_rules('link_film', 'Link Film', 'required|trim');
-    				$this->form_validation->set_rules('link_gdrive', 'Link Folder Google Drive', 'required|trim');
     
     				if (empty($_FILES['userfile']['name'])) {
     					$this->form_validation->set_rules('userfile', 'Upload File', 'required');
     				}
     
-    				// $this->form_validation->set_message('form_validation_valid_email', '%s tidak valid, harap masukkan email dengan benar');
+    				$this->form_validation->set_message('form_validation_valid_email', '%s tidak valid, harap masukkan email dengan benar');
     				$this->form_validation->set_message('required', '%s masih kosong, harap diisi');
     
     				$this->form_validation->set_error_delimiters('<span class="help-block text-danger">', '</span>');
@@ -159,14 +158,12 @@ class PendaftaranController extends CI_Controller
     
     						'link_trailer' => $this->input->post('link_trailer'),
     						'link_film' => $this->input->post('link_film'),
-    						'link_gdrive' => $this->input->post('link_gdrive'),
     
     						'poster' => $dataInfo[0]['file_name'],
     						'sinopsis' => $dataInfo[1]['file_name'],
     						'naskah' => $dataInfo[2]['file_name'],
     						'biografi_sutradara' => $dataInfo[3]['file_name'],
     						'surat_orisinalitas' => $dataInfo[4]['file_name'],
-    						'surat_izin' => $dataInfo[5]['file_name'],
     					);
     
     					$this->Pendaftaran_M->addPendaftaran($data);
@@ -259,10 +256,6 @@ class PendaftaranController extends CI_Controller
 				$this->form_validation->set_rules('link_film', 'Link Film', 'required|trim');
 			}
 
-			if ($this->input->post('link_gdrive')) {
-				$this->form_validation->set_rules('link_gdrive', 'Link Folder Google Drive', 'required|trim');
-			}
-
 			if ($this->input->post('tema_film')) {
 				$this->form_validation->set_rules('tema_film', 'Tema Film', 'required|trim');
 			}
@@ -293,8 +286,6 @@ class PendaftaranController extends CI_Controller
 				$biografi_sutradara = $biografi_sutradara == '' ? $this->input->post('tmp_biografi_sutradara') : str_replace(' ', '-', $biografi_sutradara[0]) . "_" . $user_id . '.' . $biografi_sutradara[1];
 				$surat_orisinalitas = $_FILES['surat_orisinalitas']['name'] == "" ? "" : explode('.', $_FILES['surat_orisinalitas']['name']);
 				$surat_orisinalitas = $surat_orisinalitas == '' ? $this->input->post('tmp_surat_orisinalitas') : str_replace(' ', '-', $surat_orisinalitas[0]) . "_" . $user_id . '.' . $surat_orisinalitas[1];
-				$surat_izin = $_FILES['surat_izin']['name'] == "" ? "" : explode('.', $_FILES['surat_izin']['name']);
-				$surat_izin = $surat_izin == '' ? $this->input->post('tmp_surat_izin') : str_replace(' ', '-', $surat_izin[0]) . "_" . $user_id . '.' . $surat_izin[1];
 
 				foreach ($_FILES as $key => $value) {
 					$oldName = explode('.', $_FILES[$key]['name']);
@@ -302,7 +293,7 @@ class PendaftaranController extends CI_Controller
 						$newName =  str_replace(' ', '-', $oldName[0]) . "_" . $user_id . '.' . $oldName[1];
 
 						$this->upload->initialize($this->set_upload_options($newName));
-						// $this->upload->do_upload($key);
+						$this->upload->do_upload($key);
 
 						if (!$this->upload->do_upload($key)) {
 							echo $this->upload->display_errors();
@@ -334,11 +325,6 @@ class PendaftaranController extends CI_Controller
 									unlink(FCPATH . 'uploads/' . $this->input->post('tmp_surat_orisinalitas'));
 								}
 							}
-							if ($key == 'surat_izin') {
-								if ($this->input->post('tmp_surat_izin') != "") {
-									unlink(FCPATH . 'uploads/' . $this->input->post('tmp_surat_izin'));
-								}
-							}
 						}
 					}
 				}
@@ -360,14 +346,12 @@ class PendaftaranController extends CI_Controller
 
 					'link_trailer' => $this->input->post('link_trailer'),
 					'link_film' => $this->input->post('link_film'),
-					'link_gdrive' => $this->input->post('link_gdrive'),
 
 					'poster' => $poster,
 					'sinopsis' => $sinopsis,
 					'naskah' => $naskah,
 					'biografi_sutradara' => $biografi_sutradara,
 					'surat_orisinalitas' => $surat_orisinalitas,
-					'surat_izin' => $surat_izin,
 				];
 
 				$where = $this->input->post('id');
@@ -390,7 +374,7 @@ class PendaftaranController extends CI_Controller
 			echo "<script> history.go(-1); </script>";
 		} else {
 			$where = array('id' => $id);
-			$getdata = $this->db->select('poster, sinopsis, naskah, biografi_sutradara, surat_orisinalitas, surat_izin')->get_where('pendaftaran', ['id' => $id])->result_array();
+			$getdata = $this->db->select('poster, sinopsis, naskah, biografi_sutradara, surat_orisinalitas')->get_where('pendaftaran', ['id' => $id])->result_array();
 
 			foreach ($getdata as $gd) {
 				if ($gd['poster'] != NULL || $gd['poster'] != '') {
@@ -407,9 +391,6 @@ class PendaftaranController extends CI_Controller
 				}
 				if ($gd['surat_orisinalitas'] != NULL || $gd['surat_orisinalitas'] != '') {
 					unlink(FCPATH . 'uploads/' . $gd['surat_orisinalitas']);
-				}
-				if ($gd['surat_izin'] != NULL || $gd['surat_izin'] != '') {
-					unlink(FCPATH . 'uploads/' . $gd['surat_izin']);
 				}
 			}
 			$this->Pendaftaran_M->deletePendaftaran($where, 'pendaftaran');

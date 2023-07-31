@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" type="image/png" href="<?= base_url('assets/img/logo/logo-round-dark.png') ?>">
-  <title><?= $title ?> - Brieff 5.0</title>
+  <link rel="icon" type="image/png" href="<?= base_url('assets/img/logo/logo-round.png') ?>">
+  <title><?= $title ?> - BRIEFF 6.0</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link href="<?= base_url('assets/dashboard-new/css/nucleo-icons.css'); ?>" rel="stylesheet" />
   <link href="<?= base_url('assets/dashboard-new/css/nucleo-svg.css'); ?>" rel="stylesheet" />

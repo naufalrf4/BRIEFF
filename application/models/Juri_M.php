@@ -52,46 +52,46 @@ class Juri_M extends CI_Model
 
     public function tambahDataPenilaian($post)
     {
-        // $data = [
-        //     "id" => substr(md5(rand()),0,5),
-        //     "id_user" => $this->session->userdata('id'),
-        //     "id_pendaftaran" => $id,
-        //     "teknik_penulisan" => $this->input->post('teknik_penulisan', true),
-        //     "desk_teknik_penulisan" => $this->input->post('desk_teknik_penulisan', true),
+        $data = [
+            "id" => substr(md5(rand()),0,5),
+            "id_user" => $this->session->userdata('id'),
+            // "id_pendaftaran" => $id,
+            "teknik_penulisan" => $this->input->post('teknik_penulisan', true),
+            "desk_teknik_penulisan" => $this->input->post('desk_teknik_penulisan', true),
 
-        //     "mimik" => $this->input->post('mimik', true),
-        //     "desk_mimik" => $this->input->post('desk_mimik', true),
+            "mimik" => $this->input->post('mimik', true),
+            "desk_mimik" => $this->input->post('desk_mimik', true),
 
-        //     "karakter" => $this->input->post('karakter', true),
-        //     "desk_karakter" => $this->input->post('desk_karakter', true),
+            "karakter" => $this->input->post('karakter', true),
+            "desk_karakter" => $this->input->post('desk_karakter', true),
 
-        //     "angel" => $this->input->post('angel', true),
-        //     "desk_angel" => $this->input->post('desk_angel', true),
+            "angel" => $this->input->post('angel', true),
+            "desk_angel" => $this->input->post('desk_angel', true),
 
-        //     "style" => $this->input->post('style', true),
-        //     "desk_style" => $this->input->post('desk_style', true),
+            "style" => $this->input->post('style', true),
+            "desk_style" => $this->input->post('desk_style', true),
 
-        //     "kualitas_gambar" => $this->input->post('kualitas_gambar', true),
-        //     "desk_kualitas_gambar" => $this->input->post('desk_kualitas_gambar', true),
+            "kualitas_gambar" => $this->input->post('kualitas_gambar', true),
+            "desk_kualitas_gambar" => $this->input->post('desk_kualitas_gambar', true),
 
-        //     "setting" => $this->input->post('setting', true),
-        //     "desk_setting" => $this->input->post('desk_setting', true),
+            "setting" => $this->input->post('setting', true),
+            "desk_setting" => $this->input->post('desk_setting', true),
 
-        //     "makeup" => $this->input->post('makeup', true),
-        //     "desk_makeup" => $this->input->post('desk_makeup', true),
+            "makeup" => $this->input->post('makeup', true),
+            "desk_makeup" => $this->input->post('desk_makeup', true),
 
-        //     "style_editing" => $this->input->post('style_editing', true),
-        //     "desk_style_editing" => $this->input->post('desk_style_editing', true),
+            "style_editing" => $this->input->post('style_editing', true),
+            "desk_style_editing" => $this->input->post('desk_style_editing', true),
 
-        //     "penyutradaraan" => $this->input->post('penyutradaraan', true),
-        //     "desk_penyutradaraan" => $this->input->post('desk_penyutradaraan', true),
+            "penyutradaraan" => $this->input->post('penyutradaraan', true),
+            "desk_penyutradaraan" => $this->input->post('desk_penyutradaraan', true),
 
-        //     "note" => $this->input->post('note', true),
-        // ];
+             "note" => $this->input->post('note', true),
+        ];
 
         $params['id'] = substr(md5(rand()),0,5);
         $params['id_user'] = $this->session->userdata('id');
-        $params['id_pendaftaran'] = $post['id_pendaftaran'];
+        // $params['id_pendaftaran'] = $post['id_pendaftaran'];
 
         $params['teknik_penulisan'] = $post['teknik_penulisan'];
         $params['desk_teknik_penulisan'] = $post['desk_teknik_penulisan'];
@@ -183,11 +183,11 @@ class Juri_M extends CI_Model
 
     public function ubahDataPenilaian($post)
     {
-        // $data = [
-        //     "id_user" => $this->input->post('id_user', true),
-        //     "id_pendaftaran" => $this->input->post('id_pendaftaran', true),
-        //     "nilai_film" => $this->input->post('nilai1', true)
-        // ];
+        $data = [
+            "id_user" => $this->input->post('id_user', true),
+            "id_pendaftaran" => $this->input->post('id_pendaftaran', true),
+            "nilai_film" => $this->input->post('nilai1', true)
+        ];
 
         $params['id_user'] = $this->session->userdata('id');
         $params['id_pendaftaran'] = $post['id_pendaftaran'];

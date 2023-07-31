@@ -97,9 +97,9 @@ $route['peserta'] = 'JuriController/peserta';
 $route['peserta/detail/(:any)'] = 'JuriController/detail_peserta/$1'; 
 
 // Penilaian Route
-$route['penilaian'] = 'JuriController/penilaian';
-$route['penilaian/beri-nilai/(:any)'] = 'JuriController/input/$1';
-$route['penilaian/edit-nilai/(:any)'] = 'JuriController/edit/$1';
+// $route['penilaian'] = 'JuriController/penilaian';
+// $route['penilaian/beri-nilai/(:any)'] = 'JuriController/input/$1';
+// $route['penilaian/edit-nilai/(:any)'] = 'JuriController/edit/$1';
 
 // User Route
 $route['user'] = 'AdminController/getUser';
@@ -115,10 +115,10 @@ $route['kontak/delete/(:any)'] = 'KontakController/deletePesan/$1';
 $route['kontak/baca-pesan/(:any)'] = 'KontakController/bacaPesan/$1';
 
 // Rekap Nilai Route
-$route['rekap-nilai'] = 'DashboardController/rekap_nilai';
-$route['rekap-nilai/delete/(:any)'] = 'DashboardController/delete_rekap_nilai/$1';
-$route['rekap-nilai/detail/(:any)'] = 'DashboardController/detail_rekap_nilai/$1';
-$route['rekap-nilai/export'] = 'DashboardController/export_rekap_nilai';
+// $route['rekap-nilai'] = 'DashboardController/rekap_nilai';
+// $route['rekap-nilai/delete/(:any)'] = 'DashboardController/delete_rekap_nilai/$1';
+// $route['rekap-nilai/detail/(:any)'] = 'DashboardController/detail_rekap_nilai/$1';
+// $route['rekap-nilai/export'] = 'DashboardController/export_rekap_nilai';
 
 // Profil Route
 $route['profil'] = 'ProfilControlller/index';
@@ -139,5 +139,5 @@ $route['pendaftaran/batal-juri/(:any)'] = 'PendaftaranController/batalJuri/$1';
 $route['pendaftaran/hasil-seleksi'] = 'PendaftaranController/hasil_seleksi';
 
 // Voting Route
-$route['data-vote'] = 'VotingController/data_vote';
-$route['vote/participation'] = 'VotingController/voting';
+// $route['data-vote'] = 'VotingController/data_vote';
+// $route['vote/participation'] = 'VotingController/voting';

@@ -36,25 +36,24 @@ class Pendaftaran_M extends CI_Model
 	public function editPendaftaran($where, $data)
 	{
 
-		// $params = [
-		//     'email' => $post['email'],
-		//     'no_hp' => $post['no_hp'],
-		//     'instagram' => $post['instagram'],
-		//     'nama_komunitas' => $post['nama_komunitas'],
-		//     'nama_institusi' => $post['nama_institusi'],
-		//     'domisili_komunitas' => $post['domisili_komunitas'],
-		//     'nama_film' => $post['nama_film'],
-		//     'tema_film' => $post['tema_film'],
-		//     'tahun_produksi' => $post['tahun_produksi'],
+		$params = [
+		    'email' => $post['email'],
+		    'no_hp' => $post['no_hp'],
+		    'instagram' => $post['instagram'],
+		    'nama_komunitas' => $post['nama_komunitas'],
+		    'nama_institusi' => $post['nama_institusi'],
+		    'domisili_komunitas' => $post['domisili_komunitas'],
+		    'nama_film' => $post['nama_film'],
+		    'tema_film' => $post['tema_film'],
+		    'tahun_produksi' => $post['tahun_produksi'],
 
-		//     'sutradara' => $post['sutradara'],
-		//     'penulis_naskah' => $post['penulis_naskah'],
-		//     'editor_film' => $post['editor_film'],
+		    'sutradara' => $post['sutradara'],
+		    'penulis_naskah' => $post['penulis_naskah'],
+		    'editor_film' => $post['editor_film'],
 
-		//     'link_trailer' => $post['link_trailer'],
-		//     'link_film' => $post['link_film'],
-		//     'link_gdrive' => $post['link_gdrive'],
-		// ];
+		    'link_trailer' => $post['link_trailer'],
+		    'link_film' => $post['link_film'],
+		];
 
 		$this->db->where('id', $where);
 		$this->db->update('pendaftaran', $data);

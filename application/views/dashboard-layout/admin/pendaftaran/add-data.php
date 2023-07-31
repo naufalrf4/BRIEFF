@@ -56,7 +56,7 @@
 						</div>
 						<div class="form-group">
 							<label for="tahun_produksi">Tahun Produksi</label>
-							<input type="number" min="2010" max="2022" placeholder="2010" name="tahun_produksi" class="form-control" value="<?= set_value('tahun_produksi') ?>">
+							<input type="number" min="2010" max="2023" placeholder="2010" name="tahun_produksi" class="form-control" value="<?= set_value('tahun_produksi') ?>">
 							<small class="text-danger"><?= form_error('tahun_produksi') ?></small>
 						</div>
 						<div class="form-group">
@@ -84,11 +84,6 @@
 							<input type="text" name="link_film" class="form-control" value="<?= set_value('link_film') ?>">
 							<small class="text-danger"><?= form_error('link_film') ?></small>
 						</div>
-						<div class="form-group">
-							<label for="link_gdrive">Link Folder Google Drive</label>
-							<input type="text" name="link_gdrive" class="form-control" value="<?= set_value('link_gdrive') ?>">
-							<small class="text-danger"><?= form_error('link_gdrive') ?></small>
-						</div>
 						<h5>Upload File</h5>
 						<p class="text-danger text-sm">Catatan nama file : nama komunitas-judul film-nama file</p>
 						<div class="form-group">
@@ -115,14 +110,9 @@
 							<small class="text-danger"><?= form_error('userfile') ?></small>
 						</div>
 						<h5>Upload File Surat Pernyataan</h5>
-						<p class="text-danger text-sm">Catatan : template file surat bisa Anda download di <a href="<?=site_url('surat-penyataan');?>">halaman ini</a></p>
+						<p>Catatan : template file surat bisa Anda download di <a href="<?=site_url('surat-penyataan');?>" class="text-danger text-sm">halaman ini</a></p>
 						<div class="form-group">
 							<label for="surat_orisinalitas">Surat Pernyataan Keorisinalitas <small class="text-danger">(PDF)</small></label>
-							<input type="file" name="userfile[]" class="form-control" required>
-							<small class="text-danger"><?= form_error('userfile') ?></small>
-						</div>
-						<div class="form-group">
-							<label for="surat_izin">Surat Izin Penggunaan Lagu atau Surat Pernyataan Orisinalitas Penciptaan Musik <small class="text-danger">(PDF)</small></label>
 							<input type="file" name="userfile[]" class="form-control" required>
 							<small class="text-danger"><?= form_error('userfile') ?></small>
 						</div>

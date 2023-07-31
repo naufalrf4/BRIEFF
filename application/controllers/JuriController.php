@@ -107,7 +107,7 @@ class JuriController extends CI_Controller
 				}
 			}
 
-			// $id_pendaftar = $data['pendaftaran']['id'];
+			$id_pendaftar = $data['pendaftaran']['id'];
 
 			$this->form_validation->set_rules('teknik_penulisan', 'Teknik Penulisan', 'required');
 			$this->form_validation->set_rules('desk_teknik_penulisan', 'Deskripsi Teknik Penulisan', 'required');
@@ -147,7 +147,7 @@ class JuriController extends CI_Controller
 				$this->load->view('dashboard-layout/juri/penilaian/beri-nilai', $data);
 				$this->load->view('dashboard-layout/template/footer');
 			} else {
-				// $this->Juri_M->tambahDataPenilaian($id_pendaftar);
+				$this->Juri_M->tambahDataPenilaian($id_pendaftar);
 				$post = $this->input->post(null, TRUE);
 				$this->Juri_M->tambahDataPenilaian($post);
 

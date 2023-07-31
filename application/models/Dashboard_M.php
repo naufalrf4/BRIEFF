@@ -11,7 +11,7 @@ class Dashboard_M extends CI_Model {
             $this->db->from('penilaian');
             $this->db->join('user', 'user.id = penilaian.id_user');
             $this->db->join('pendaftaran', 'pendaftaran.id = penilaian.id_pendaftaran');
-            // $this->db->order_by('penilaian.id','DESC');
+            $this->db->order_by('penilaian.id','DESC');
             $this->db->order_by('penilaian.created_at','DESC');
             $query = $this->db->get();
             return $query->result();

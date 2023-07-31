@@ -84,10 +84,6 @@
 											<td>: <a href="<?=$p['link_film']?>" target="_blank"><?= ucfirst($p['link_film']) ?></a></td>
 										</tr>
 										<tr>
-											<td class="fw-bold">Link Folder Google Drive</td>
-											<td>: <a href="<?=$p['link_gdrive']?>" target="_blank"><?= ucfirst($p['link_gdrive']) ?></a></td>
-										</tr>
-										<tr>
 											<td class="fw-bold">Poster</td>
 											<td>:
 												<a href="<?= base_url('pendaftaran/download/') . $p['poster']; ?>" class="btn btn-outline-primary btn-sm" target="blank">
@@ -126,15 +122,7 @@
 													<i class="fa fa-download"></i> Download
 												</a>
 											</td>
-										</tr>
-										<tr>
-											<td class="fw-bold">Surat Izin Penggunaan Lagu atau <br> Surat Pernyataan Orisinalitas Penciptaan Musik</td>
-											<td>:
-												<a href="<?= base_url('pendaftaran/download/') . $p['surat_izin']; ?>" class="btn btn-outline-primary btn-sm" target="blank">
-													<i class="fa fa-download"></i> Download
-												</a>
-											</td>
-										</tr>
+										</tr>	
 									</table>
 								</div>
 							</div>

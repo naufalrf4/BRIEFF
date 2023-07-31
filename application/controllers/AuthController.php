@@ -147,7 +147,7 @@ class AuthController extends CI_Controller
 
 		$this->load->library('email', $config);
 
-		$this->email->from('contact@brieff.id', 'BRIEFF 6.0');
+		$this->email->from('contact@brieff.id', 'Verifikasi Email - BRIEFF 6.0');
 		$this->email->to($this->input->post('email'));
 		$this->email->set_mailtype('html');
 
@@ -186,9 +186,9 @@ class AuthController extends CI_Controller
 			if ($user_token) {
 				if(time() - $user_token['created_at'] < (60*60*24)) {
 					$this->db->set('is_active', 1);
+					$this->db->set('role', 'peserta');
 					$this->db->where('email', $email);
 					$this->db->update('user');
-
 					$this->db->delete('user_token', ['email' => $email]);
 
 					$this->session->set_flashdata('success', 'Email '.$email.' berhasil diaktivasi! Silakan login!');
@@ -298,12 +298,12 @@ class AuthController extends CI_Controller
 		if (!$this->session->userdata('reset_email')) {
 			redirect('login');
 		} else if ($this->session->userdata('role') == NUll) {
-			$this->form_validation->set_rules('password', 'Password Baru', 'required|min_length[5]|max_length[8]');
+			$this->form_validation->set_rules('password', 'Password Baru', 'required|min_length[5]|max_length[10]');
 			$this->form_validation->set_rules('passconf', 'Konfirmasi Password', 'required|matches[password]', array('matches' => '%s tidak sesuai dengan password'));
 
 			$this->form_validation->set_message('required', '%s masih kosong, harap diisi');
 			$this->form_validation->set_message('min_length', '{field} minimal 5 karakter');
-			$this->form_validation->set_message('max_length', '{field} maksimal 8 karakter');
+			$this->form_validation->set_message('max_length', '{field} maksimal 10 karakter');
 
 			$this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
 
